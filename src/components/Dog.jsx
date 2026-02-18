@@ -95,9 +95,9 @@ const Dog = () => {
   });
 
   const material = useRef({
-    uMatcap1: { value: mat2 },
-    uMatcap2: { value: mat19 },
-    uProgress: { value: 0.5 },
+    uMatcap1: { value: mat19 },
+    uMatcap2: { value: mat2 },
+    uProgress: { value: 1.0 },
   });
 
   const dogMaterial = new THREE.MeshMatcapMaterial({
@@ -195,6 +195,90 @@ const Dog = () => {
         "third",
       );
   }, []);
+  
+  useEffect(() => {
+    document.querySelector(`.project[img-title="tomorrowland"]`).addEventListener("mouseenter", () => {
+      material.current.uMatcap1.value = mat19;
+      gsap.to(material.current.uProgress, {
+        value: 0.0,
+        duration: 2.2,
+        onComplete: () => {
+          material.current.uMatcap2.value = material.current.uMatcap1.value;
+          material.current.uProgress.value = 1.0;
+        }
+      })
+    })
+    
+    document.querySelector(`.project[img-title="navypier"]`).addEventListener("mouseenter", () => {
+      material.current.uMatcap1.value = mat8;
+      gsap.to(material.current.uProgress, {
+        value: 0.0,
+        duration: 2.2,
+        onComplete: () => {
+          material.current.uMatcap2.value = material.current.uMatcap1.value;
+          material.current.uProgress.value = 1.0;
+        }
+      })
+    })
+    
+    document.querySelector(`.project[img-title="msichicago"]`).addEventListener("mouseenter", () => {
+      material.current.uMatcap1.value = mat12;
+      gsap.to(material.current.uProgress, {
+        value: 0.0,
+        duration: 2.2,
+        onComplete: () => {
+          material.current.uMatcap2.value = material.current.uMatcap1.value;
+          material.current.uProgress.value = 1.0;
+        }
+      })
+    })
+    
+    document.querySelector(`.project[img-title="louisephone"]`).addEventListener("mouseenter", () => {
+      material.current.uMatcap1.value = mat14;
+      gsap.to(material.current.uProgress, {
+        value: 0.0,
+        duration: 2.2,
+        onComplete: () => {
+          material.current.uMatcap2.value = material.current.uMatcap1.value;
+          material.current.uProgress.value = 1.0;
+        }
+      })
+    })
+    document.querySelector(`.project[img-title="kikkfestival"]`).addEventListener("mouseenter", () => {
+      material.current.uMatcap1.value = mat10;
+      gsap.to(material.current.uProgress, {
+        value: 0.0,
+        duration: 2.2,
+        onComplete: () => {
+          material.current.uMatcap2.value = material.current.uMatcap1.value;
+          material.current.uProgress.value = 1.0;
+        }
+      })
+    })
+    document.querySelector(`.project[img-title="kemedycenter"]`).addEventListener("mouseenter", () => {
+      material.current.uMatcap1.value = mat11;
+      gsap.to(material.current.uProgress, {
+        value: 0.0,
+        duration: 2.2,
+        onComplete: () => {
+          material.current.uMatcap2.value = material.current.uMatcap1.value;
+          material.current.uProgress.value = 1.0;
+        }
+      })
+    })
+    document.querySelector(`.project[img-title="royaloperaofwallonia"]`).addEventListener("mouseenter", () => {
+      material.current.uMatcap1.value = mat3;
+      gsap.to(material.current.uProgress, {
+        value: 0.0,
+        duration: 2.2,
+        onComplete: () => {
+          material.current.uMatcap2.value = material.current.uMatcap1.value;
+          material.current.uProgress.value = 1.0;
+        }
+      })
+    })
+    
+  })
 
   return (
     <>
